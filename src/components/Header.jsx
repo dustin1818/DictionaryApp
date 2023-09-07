@@ -1,5 +1,6 @@
 import React from "react";
 import ToggleFont from "./ToggleFont";
+import LightDarkMode from "./LightDarkMode";
 
 const Header = () => {
   return (
@@ -43,8 +44,12 @@ const Header = () => {
         </svg>
       </div>
 
-      <div className="right-container">
+      <div className="right-container flex items-center">
         <ToggleFont />
+
+        <span className="mx-3 text-2xl md:text-3xl"> | </span>
+
+        <LightDarkMode />
       </div>
     </div>
   );

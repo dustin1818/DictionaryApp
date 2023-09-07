@@ -14,7 +14,9 @@ const ToggleFont = () => {
       className="flex items-center cursor-pointer relative"
       onClick={updateFont}
     >
-      <h2 className="font-bold mr-5 text-lg text-gray-900">{font.fontFamily}</h2>
+      <h2 className="font-bold mx-3 text-sm md:text-lg text-gray-900 dark:text-white">
+        {font.fontFamily}
+      </h2>
       <svg
         xmlnsXlink="http://www.w3.org/1999/xlink"
         xmlns="http://www.w3.org/2000/svg"
@@ -31,20 +33,20 @@ const ToggleFont = () => {
       </svg>
 
       {toggleBtn === true ? (
-        <div className="absolute top-[50px] right-0 bottom-0 left-0 p-5 shadow h-[165px] w-[206px] rounded">
+        <div className="absolute top-[45px] right-0 bottom-0 left-[-68px] md:left-0 p-5 shadow h-[135px] w-[165px] rounded dark:bg-white dark:text-slate-800 dark:shadow-purple-800 dark:shadow-md z-10">
           <h2
-            className="cursor font-bold mb-3 text-lg hover:text-[#A445ED] font-[!Nunito San]"
+            className="roboto cursor font-bold mb-3 text-md md:text-lg hover:text-[#A445ED] "
             onClick={() =>
               setFont({
                 ...font,
-                fontFamily:"Nunito Sans",
+                fontFamily: "Roboto",
               })
             }
           >
-            Nunito Sans
+            Roboto
           </h2>
           <h2
-            className="cursor font-bold mb-3 text-lg hover:text-[#A445ED] font-[!Poppins] "
+            className="poppins cursor font-bold mb-3 text-md md:text-lg hover:text-[#A445ED] "
             onClick={() =>
               setFont({
                 ...font,
@@ -53,6 +55,18 @@ const ToggleFont = () => {
             }
           >
             Poppins
+          </h2>
+
+          <h2
+            className="montserrat cursor font-bold mb-3 text-md md:text-lg hover:text-[#A445ED]"
+            onClick={() =>
+              setFont({
+                ...font,
+                fontFamily: "Montserrat",
+              })
+            }
+          >
+            Montserrat
           </h2>
         </div>
       ) : null}
