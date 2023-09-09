@@ -1,20 +1,34 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { DictionaryContext } from "../contexts/DictionaryContext";
+import useOnClickOutsideRef from "../hooks/ClickOutsideHook";
 
 const ToggleFont = () => {
   const [toggleBtn, setToggleBtn] = useState(false);
   const { font, setFont } = useContext(DictionaryContext);
-  console.log(font.fontFamily);
 
   const updateFont = () => {
     setToggleBtn((value) => !value);
   };
+
+  const modalRef = useOnClickOutsideRef(() => setToggleBtn(false));
+
+  useEffect(() => {
+    function handler(event) {
+      if (!modalRef.current?.contains(event.target)) {
+        setToggleBtn(false);
+      }
+    }
+    window.addEventListener("click", handler);
+    return () => window.removeEventListener("click", handler);
+  }, []);
+
   return (
     <div
+      ref={modalRef}
       className="flex items-center cursor-pointer relative"
       onClick={updateFont}
     >
-      <h2 className="font-bold mx-3 text-sm md:text-lg text-gray-900 dark:text-white">
+      <h2 className="font-bold mr-4 text-lg text-gray-900 dark:text-white">
         {font.fontFamily}
       </h2>
       <svg

@@ -1,4 +1,3 @@
-import React from "react";
 import ToggleFont from "./ToggleFont";
 import LightDarkMode from "./LightDarkMode";
 
@@ -10,7 +9,7 @@ const Header = () => {
           xmlnsXlink="http://www.w3.org/1999/xlink"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 34 38"
-          className="h-8 w-8"
+          className="h-11 w-11"
           width="34"
           height="38"
         >
@@ -47,7 +46,7 @@ const Header = () => {
       <div className="right-container flex items-center">
         <ToggleFont />
 
-        <span className="mx-3 text-2xl md:text-3xl"> | </span>
+        <span className="mx-4 text-2xl md:text-3xl"> | </span>
 
         <LightDarkMode />
       </div>

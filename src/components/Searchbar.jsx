@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { DictionaryContext } from "../contexts/DictionaryContext";
 
 const Searchbar = () => {
-  const [term, setTerm] = useState("");
   const [errors, setErrors] = useState("");
+  const { term, setTerm } = useContext(DictionaryContext);
 
   const searchValue = (e) => {
     const word = e.target.value.trim();
@@ -10,7 +11,7 @@ const Searchbar = () => {
   };
 
   const sendValue = () => {
-    if (term === "") {
+    if (term === null || term === "") {
       setErrors("Please enter a value");
     } else {
       console.log(term);
@@ -18,14 +19,24 @@ const Searchbar = () => {
     }
   };
 
+  const searchEnterValue = (e) => {
+    if (term === null || term === "") {
+      setErrors("Please enter a value");
+    } else if (e.key === "Enter") {
+      console.log(term);
+      setErrors("");
+    }
+  };
+
   return (
     <>
-      <div className="relative flex h-12 items-center gap-5 rounded-2xl bg-secondary-200 px-6 outline outline-1 outline-transparent transition-all duration-300  md:h-16 focus-within:outline-accent dark: bg-zinc-950 mt-14">
+      <div className="relative flex h-16 items-center gap-5 rounded-2xl bg-secondary-200 px-6 outline outline-1 outline-transparent transition-all duration-300  focus-within:outline-accent dark: bg-zinc-950 mt-14">
         <input
           type="text"
           className="dark w-full grow bg-transparent font-bold caret-accent outline-none transition-colors duration-300 placeholder:text-primary-400 placeholder:text-opacity-25 placeholder:transition-colors placeholder:duration-300 dark:placeholder:text-white dark:placeholder:text-opacity-25 md:text-xl "
           placeholder="Search for any word..."
           onChange={(e) => searchValue(e)}
+          onKeyDown={(e) => searchEnterValue(e)}
         />
 
         <button className="shrink-0" onClick={sendValue}>
@@ -47,9 +58,7 @@ const Searchbar = () => {
           </svg>
         </button>
       </div>
-      {errors ? (
-        <p className="text-red-500 mt-5 text-center">{errors}</p>
-      ) : null}
+      {errors ? <p className="text-red-500 mt-5 text-left">{errors}</p> : null}
     </>
   );
 };
