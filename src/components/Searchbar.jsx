@@ -4,26 +4,22 @@ import { DictionaryContext } from "../contexts/DictionaryContext";
 const Searchbar = () => {
   const [errors, setErrors] = useState("");
   const { term, setTerm } = useContext(DictionaryContext);
-
-  const searchValue = (e) => {
-    const word = e.target.value.trim();
-    setTerm(word);
-  };
+  const [value, setValue] = useState("");
 
   const sendValue = () => {
-    if (term === null || term === "") {
+    if (value === "") {
       setErrors("Please enter a value");
     } else {
-      console.log(term);
+      setTerm(value);
       setErrors("");
     }
   };
 
   const searchEnterValue = (e) => {
-    if (term === null || term === "") {
+    if (value === "") {
       setErrors("Please enter a value");
     } else if (e.key === "Enter") {
-      console.log(term);
+      setTerm(value);
       setErrors("");
     }
   };
@@ -35,7 +31,7 @@ const Searchbar = () => {
           type="text"
           className="dark w-full grow bg-transparent font-bold caret-accent outline-none transition-colors duration-300 placeholder:text-primary-400 placeholder:text-opacity-25 placeholder:transition-colors placeholder:duration-300 dark:placeholder:text-white dark:placeholder:text-opacity-25 md:text-xl "
           placeholder="Search for any word..."
-          onChange={(e) => searchValue(e)}
+          onChange={(e) => setValue(e.target.value.trim())}
           onKeyDown={(e) => searchEnterValue(e)}
         />
 

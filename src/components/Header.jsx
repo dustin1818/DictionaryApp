@@ -2,10 +2,14 @@ import ToggleFont from "./ToggleFont";
 import LightDarkMode from "./LightDarkMode";
 
 const Header = () => {
+  const reloadPage = () => {
+    window.location.reload();
+  };
   return (
     <div className="flex">
       <div className="left-container mr-auto">
         <svg
+          onClick={reloadPage}
           xmlnsXlink="http://www.w3.org/1999/xlink"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 34 38"

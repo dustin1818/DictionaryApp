@@ -16,8 +16,8 @@ const Body = () => {
       const response = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${term}`
       );
-      console.log(response.data);
       setIsLoading(false);
+      setWords(response.data);
     } catch (error) {
       setError("Sorry, something went wrong");
       setIsLoading(false);
@@ -26,14 +26,16 @@ const Body = () => {
 
   useEffect(() => {
     getWord();
-  }, []);
+  }, [term]);
+
+  // console.log(term, "times");
 
   return (
-    <div className="mt-20">
-      {words ? (
+    <div className="mt-10 md:mt-20">
+      {term !== null ? (
         <Word isLoading={isLoading} error={error} words={words} />
       ) : (
-        <div className="flex flex-col items-center text-center">
+        <div className="mt-20 flex flex-col justify-center items-center text-center">
           <img
             src="../src/assets/emoji_open_book-9a5416d7.png"
             alt="emoji_open_book-9a5416d7.png"
@@ -47,7 +49,7 @@ const Body = () => {
           <p className="text-md text-zinc-700">
             "The limits of my langauge mean the limits of my world."
           </p>
-          <p className="font-bold mt-4 text-lg text-zinc-700">
+          <p className="font-bold mt-4 text-md text-zinc-700">
             Ludwig Wittgenstein
           </p>
         </div>
