@@ -10,9 +10,7 @@ Currently, two official plugins are available:
 
 # Things to do
 - follow this url for reference https://gleeful-belekoy-4fddb7.netlify.app/
-- update to different fonts
 - add dark mode
-- add search input
-- add dictionary search input
-- add sound/voice option
-- add footer
+- update name tab to searchword | Dictionary
+- update logo tab icon
+- add small animation
