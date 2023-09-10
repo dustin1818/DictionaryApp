@@ -37,7 +37,7 @@ const Body = () => {
       ) : (
         <div className="mt-20 flex flex-col justify-center items-center text-center">
           <img
-            src="../src/assets/emoji_open_book-9a5416d7.png"
+            src="/src/assets/emoji_open_book-9a5416d7.png"
             alt="emoji_open_book-9a5416d7.png"
             className="contain h-16"
           />
