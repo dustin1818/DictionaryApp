@@ -47,9 +47,9 @@ const ToggleFont = () => {
       </svg>
 
       {toggleBtn === true ? (
-        <div className="absolute top-[45px] right-0 bottom-0 left-[-68px] md:left-0 p-5 shadow h-[135px] w-[165px] rounded dark:bg-white dark:text-slate-800 dark:shadow-purple-800 dark:shadow-md z-10">
+        <div className="absolute top-[45px] right-0 bottom-0 left-[-68px] md:left-0 p-5 shadow h-[145px] w-[165px] rounded bg-zinc-800 dark:bg-white text-white dark:text-slate-800 dark:shadow-purple-800 dark:shadow-md z-10">
           <h2
-            className="roboto cursor font-bold mb-3 text-md md:text-lg hover:text-[#A445ED] "
+            className="roboto cursor  mb-3 text-md md:text-lg hover:text-[#A445ED] "
             onClick={() =>
               setFont({
                 ...font,
@@ -60,7 +60,7 @@ const ToggleFont = () => {
             Roboto
           </h2>
           <h2
-            className="poppins cursor font-bold mb-3 text-md md:text-lg hover:text-[#A445ED] "
+            className="poppins cursor  mb-3 text-md md:text-lg hover:text-[#A445ED] "
             onClick={() =>
               setFont({
                 ...font,
@@ -72,7 +72,7 @@ const ToggleFont = () => {
           </h2>
 
           <h2
-            className="montserrat cursor font-bold mb-3 text-md md:text-lg hover:text-[#A445ED]"
+            className="montserrat cursor mb-3 text-md md:text-lg hover:text-[#A445ED]"
             onClick={() =>
               setFont({
                 ...font,

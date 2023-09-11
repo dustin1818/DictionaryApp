@@ -26,10 +26,10 @@ const Searchbar = () => {
 
   return (
     <>
-      <div className="relative flex h-16 items-center gap-5 rounded-2xl bg-secondary-200 px-6 outline outline-1 outline-transparent transition-all duration-300  focus-within:outline-accent dark: bg-zinc-950 mt-14">
+      <div className="relative flex h-16 items-center gap-5 rounded-2xl bg-secondary-200 px-6 outline outline-1 outline-transparent transition-all duration-300  focus-within:outline-accent bg-zinc-800 dark: bg-zinc-950 mt-10 md:mt-20">
         <input
           type="text"
-          className="dark w-full grow bg-transparent font-bold caret-accent outline-none transition-colors duration-300 placeholder:text-primary-400 placeholder:text-opacity-25 placeholder:transition-colors placeholder:duration-300 dark:placeholder:text-white dark:placeholder:text-opacity-25 md:text-xl "
+          className="text-white w-full grow bg-transparent font-bold caret-accent outline-none transition-colors duration-300 placeholder:text-zinc-400 placeholder:text-opacity-25 placeholder:transition-colors placeholder:duration-300 dark:placeholder:text-white dark:placeholder:text-opacity-25 md:text-xl "
           placeholder="Search for any word..."
           onChange={(e) => setValue(e.target.value.trim())}
           onKeyDown={(e) => searchEnterValue(e)}
