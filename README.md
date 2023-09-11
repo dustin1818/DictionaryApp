@@ -10,7 +10,7 @@ Currently, two official plugins are available:
 
 # Things to do
 - follow this url for reference https://gleeful-belekoy-4fddb7.netlify.app/
-- add dark mode
+- add dark mode styling, transfer toggle function to togglebutton
 - update name tab to searchword | Dictionary
 - update logo tab icon
 - add small animation
