@@ -25,7 +25,7 @@ const Word = ({ isLoading, error, words, term, setTerm }) => {
   };
 
   const getSynonym = (e) => {
-    console.log(words, e);
+    // console.log(words, e);
     // word.meaning.filter(())
   };
   return (
