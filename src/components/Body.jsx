@@ -28,21 +28,25 @@ const Body = () => {
     getWord();
   }, [term]);
 
-  // console.log(term, "times");
-
   return (
-    <div className="mt-10 md:mt-20">
+    <div className="mt-10 md:mt-20 bg-white dark:bg-black">
       {term !== null ? (
-        <Word isLoading={isLoading} error={error} words={words} />
+        <Word
+          isLoading={isLoading}
+          error={error}
+          words={words}
+          term={term}
+          setTerm={setTerm}
+        />
       ) : (
-        <div className="mt-20 flex flex-col justify-center items-center text-center">
+        <div className="mt-20 h-full flex flex-col justify-center items-center text-center">
           <img
             src="/src/assets/emoji_open_book-9a5416d7.png"
             alt="emoji_open_book-9a5416d7.png"
             className="contain h-16"
           />
 
-          <h1 className="font-bold text-xl mt-10 mb-8">
+          <h1 className="font-bold text-xl mt-10 mb-8 text-zinc-700 dark:text-white ">
             Frontend Mentor Dictionary
           </h1>
 

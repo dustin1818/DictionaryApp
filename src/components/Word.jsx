@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const Word = ({ isLoading, error, words }) => {
+const Word = ({ isLoading, error, words, term, setTerm }) => {
   if (isLoading) {
     return (
       <div className=" h-screen grid place-items-center text-center text-4xl">
@@ -23,13 +23,21 @@ const Word = ({ isLoading, error, words }) => {
       audio.play();
     }
   };
+
+  const getSynonym = (e) => {
+    console.log(words, e);
+    // word.meaning.filter(())
+  };
   return (
     <>
       {words.map((word, index) => (
-        <div className="" key={index}>
+        <div
+          className="text-zinc-700 dark:text-white bg-white dark:bg-black"
+          key={index}
+        >
           <div className="flex justify-between items-center" controls>
             <div className="block">
-              <h1 className="font-bold text-[42px] mb-1 capitalize">
+              <h1 className="font-bold text-[42px] mb-1 capitalize ">
                 {index + 1}. {word.word}
               </h1>
               <p className="text-purple-600 text-[23px]">{word.phonetic}</p>
@@ -99,10 +107,13 @@ const Word = ({ isLoading, error, words }) => {
                 }
               >
                 <p className="text-zinc-600 text-[21px]">Synonyms</p>
-
                 {meanings.synonyms.length > 0 &&
                   meanings.synonyms.map((synonyms, index) => (
-                    <p className="text-purple-600 text-[21px]" key={index}>
+                    <p
+                      className="text-purple-600 text-[21px]"
+                      key={index}
+                      onClick={() => getSynonym(index)}
+                    >
                       {synonyms}
                     </p>
                   ))}
@@ -111,7 +122,6 @@ const Word = ({ isLoading, error, words }) => {
           ))}
 
           <hr className="border-zinc-700 my-5" />
-
           <section className="flex items-center gap-4">
             <p className="text-zinc-600 text-[21px] my-6">Source</p>
             <div className="flex items-center">
