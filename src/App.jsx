@@ -13,10 +13,16 @@ function App() {
 
   return (
     <div
-      className="bg-white dark:bg-black h-screen"
+      className="bg-white dark:bg-black"
       style={{ fontFamily: font.fontFamily }}
     >
-      <div className="py-5 px-4 md:w-[695px] md:m-auto bg-white dark:bg-black">
+      <div
+        className={
+          term !== null
+            ? "py-5 px-4 md:w-[695px] md:m-auto bg-white dark:bg-black"
+            : "py-5 px-4 md:w-[695px] md:m-auto bg-white dark:bg-black h-screen"
+        }
+      >
         <DictionaryContext.Provider value={{ font, setFont, term, setTerm }}>
           <Header />
           <Searchbar />

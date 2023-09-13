@@ -25,8 +25,8 @@ const Word = ({ isLoading, error, words, term, setTerm }) => {
   };
 
   const getSynonym = (e) => {
-    // console.log(words, e);
-    // word.meaning.filter(())
+    console.log(words, e);
+    // words.meaning.filter(())
   };
   return (
     <>
@@ -112,7 +112,7 @@ const Word = ({ isLoading, error, words, term, setTerm }) => {
                     <p
                       className="text-purple-600 text-[21px]"
                       key={index}
-                      onClick={() => getSynonym(index)}
+                      onClick={() => setTerm(synonyms)}
                     >
                       {synonyms}
                     </p>
