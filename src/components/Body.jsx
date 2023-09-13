@@ -40,12 +40,6 @@ const Body = () => {
         />
       ) : (
         <div className="mt-20 h-full flex flex-col justify-center items-center text-center">
-          <img
-            src="./src/assets/dictionary.png"
-            alt="emoji_open_book-9a5416d7.png"
-            className="contain h-16"
-          />
-
           <h1 className="font-bold text-xl mt-10 mb-8 text-zinc-700 dark:text-white ">
             Frontend Mentor Dictionary
           </h1>
